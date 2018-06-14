@@ -1,0 +1,8 @@
+{
+  "name": "toodo",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
