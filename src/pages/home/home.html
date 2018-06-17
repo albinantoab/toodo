@@ -1,14 +1,30 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      toodo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <span *ngIf="!notes" class="no-data">create new task...</span>
+  <ion-grid style="margin-top:10px;">
+    <ion-list class="toodoo-list" *ngFor="let note of notes; let i = index">
+      <ion-item-sliding #item>
+        <ion-item>
+          {{note}}
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="success" (click)="removeNote(i)">done</button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="removeNote(i)">delete</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-grid>
+  <div class="add-round" (click)="openModal()">
+    <img src="../../assets/icon/baseline_add_white_48pt_1x.png" style="margin-left: 2px;margin-top: 2px;">
+  </div>
 </ion-content>

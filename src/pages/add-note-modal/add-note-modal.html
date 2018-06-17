@@ -1,0 +1,27 @@
+<!--
+  Generated template for the AddNoteModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>toodo</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Close</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid class="text-center">
+    <ion-item>
+      <ion-label color="purp" floating>enter task...</ion-label>
+      <ion-input [(ngModel)]="note"></ion-input>
+    </ion-item><br>
+    <button ion-button class="add-btn" (click)="addNote()">add</button>
+  </ion-grid>
+</ion-content>

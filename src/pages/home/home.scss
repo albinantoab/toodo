@@ -1,3 +1,45 @@
 page-home {
-
+    .no-data{
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+    .add-round {
+        position: fixed;
+        bottom: 0;
+        width: 50px;
+        background-color: $toolbar-background;
+        border-radius: 50%;
+        height: 50px;
+        margin-bottom: 25px;
+        margin-left: 10px;
+        z-index: 100;
+        box-shadow: 1px 1px 3px rgb(104, 104, 104);
+        transition: all 0.5s ease;
+    }
+    .toodo-card{
+        transition: all 0.5s ease;
+        z-index: 5;
+        float: left;
+        position: relative;
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .swipe-right{
+        margin-left: 100px;
+    }
+    .no-swipe{
+        margin-left: 10px;
+    }
+    .swipe-left{
+        margin-left: -100px;
+    }
+    .toodoo-list ion-label{
+        text-overflow: unset;
+        white-space: unset;
+    }
+    .toodoo-list{
+        transition: all 0.5s ease;
+    }
 }
