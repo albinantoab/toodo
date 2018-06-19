@@ -1,13 +1,13 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
-    <ion-title>
+    <ion-title text-center>
       toodo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <span *ngIf="!notes" class="no-data">create new task...</span>
+<ion-content padding class="main-content">
+  <!-- <span *ngIf="!notes" class="no-data">create new task...</span>
   <ion-grid style="margin-top:10px;">
     <ion-list class="toodoo-list" *ngFor="let note of notes; let i = index">
       <ion-item-sliding #item>
@@ -26,5 +26,15 @@
   </ion-grid>
   <div class="add-round" (click)="openModal()">
     <img src="../../assets/icon/baseline_add_white_48pt_1x.png" style="margin-left: 2px;margin-top: 2px;">
+  </div> -->
+  <div id="toodo-main">
+    <div id="toodo-add">
+      <input type="text" name="add-note" placeholder="add toodo..." (keypress)="enterPress($event.keyCode)" [(ngModel)]="note" #add_note>
+    </div>
+    <div id="toodo-todos">
+      <div class="todo" *ngFor="let note of notes; let i = index" (swipe)="onSwipe($event)" id="todo-{{i}}">
+        <div>{{note}}</div>
+      </div>
+    </div>
   </div>
 </ion-content>

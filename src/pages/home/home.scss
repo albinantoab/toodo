@@ -42,4 +42,100 @@ page-home {
     .toodoo-list{
         transition: all 0.5s ease;
     }
+    #toodo-main{
+        height: 100%;
+        width: 100%;
+    }
+    .main-content{
+        background-color: $toolbar-background;
+    }
+    #toodo-add{
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        input{
+            border:none;
+            background: none;
+            border:2px dashed #fff;
+            border-radius: 4px;
+            padding: 7px;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+    #toodo-todos{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 88%;
+        overflow: scroll;
+        overflow-x: hidden;
+        transition: all 0.5s ease;
+        .todo{
+            padding: 7px;
+            width: 90%;
+            background-color: #fff;
+            color: $toolbar-background;
+            border-radius: 4px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            position: relative;
+            opacity: 1;
+            -webkit-animation: showCard 0.3s linear;
+            animation: showCard 0.3s linear;
+            transition: all 0.5s ease;
+        }
+        .move-left{
+            left:20px;
+            -webkit-animation: swipe-right 0.3s linear;
+            animation: swipe-right 0.3s linear;
+        }
+        .todo:after{
+            content: "delete";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            z-index: -1;
+            border-radius: 5px;
+        }
+    }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 0.7; /* Firefox */
+    font-weight: 400;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+}
+
+@-webkit-keyframes showCard {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes showCard {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+@-webkit-keyframes swipe-right {
+    0%   {left: 0;}
+    100% {left: 20px;}
+}
+
+/* Standard syntax */
+@keyframes swipe-right {
+    0%   {left: 0;}
+    100% {left: 20px;}
 }
